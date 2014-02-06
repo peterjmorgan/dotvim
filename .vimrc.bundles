@@ -95,6 +95,8 @@
             Bundle 'terryma/vim-multiple-cursors'
             Bundle 'vim-scripts/sessionman.vim'
             Bundle 'matchit.zip'
+            Bundle 'cscope.vim'
+            Bundle 'autoload_cscope.vim'
             if (has("python") || has("python3")) && exists('g:spf13_use_powerline') && !exists('g:spf13_use_old_powerline')
                 Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
             elseif exists('g:spf13_use_powerline') && exists('g:spf13_use_old_powerline')
@@ -114,15 +116,13 @@
                 Bundle 'vim-scripts/restore_view.vim'
             endif
             Bundle 'airblade/vim-gitgutter'
-            Bundle 'tpope/vim-abolish.git'
         endif
 
     " General Programming
         if count(g:spf13_bundle_groups, 'programming')
             " Pick one of the checksyntax, jslint, or syntastic
-            Bundle 'scrooloose/syntastic'
+            ""Bundle 'scrooloose/syntastic'
             Bundle 'tpope/vim-fugitive'
-            Bundle 'mattn/webapi-vim'
             Bundle 'mattn/gist-vim'
             Bundle 'scrooloose/nerdcommenter'
             Bundle 'godlygeek/tabular'
@@ -161,7 +161,6 @@
     " Javascript
         if count(g:spf13_bundle_groups, 'javascript')
             Bundle 'elzr/vim-json'
-            Bundle 'groenewege/vim-less'
             Bundle 'pangloss/vim-javascript'
             Bundle 'briancollins/vim-jst'
             Bundle 'kchmck/vim-coffee-script'
@@ -193,7 +192,6 @@
         if count(g:spf13_bundle_groups, 'misc')
             Bundle 'tpope/vim-markdown'
             Bundle 'spf13/vim-preview'
-            Bundle 'tpope/vim-cucumber'
             Bundle 'quentindecock/vim-cucumber-align-pipes'
         endif
 
