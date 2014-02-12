@@ -50,6 +50,7 @@
         Bundle 'MarcWeber/vim-addon-mw-utils'
         Bundle 'tomtom/tlib_vim'
         Bundle 'https://github.com/peterjmorgan/mark-2.8.0'
+        Bundle 'https://github.com/jpalardy/vim-slime'
         if executable('ack-grep')
             let g:ackprg="ack-grep -H --nocolor --nogroup --column"
             Bundle 'mileszs/ack.vim'
@@ -90,7 +91,6 @@
             Bundle 'altercation/vim-colors-solarized'
             Bundle 'spf13/vim-colors'
             Bundle 'tpope/vim-surround'
-            Bundle 'spf13/vim-autoclose'
             Bundle 'kien/ctrlp.vim'
             Bundle 'terryma/vim-multiple-cursors'
             Bundle 'vim-scripts/sessionman.vim'

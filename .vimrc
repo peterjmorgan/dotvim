@@ -778,6 +778,10 @@
         let g:gitgutter_realtime = 0
     " }
 
+    " {
+        let g:slime_target = "tmux"
+    " }
+
 " }
 
 " GUI Settings {
@@ -937,16 +941,3 @@
         endif
     endif
 " }
-
-" Add Nephi and Todd's source auditing stuff {
-    map ,start k:r !date<CR>$a - ++STARTED<ESC>^i// <ESC>:w<CR>:!git commit -m "++STARTED auditing % on `date`" %<CR><CR>
-    map ,stop k:r !date<CR>$a - ++STOPPED<ESC>^i// <ESC>:w<CR>:!git commit -m "++STOPPED auditing % on `date`" %<CR><CR>
-    map ,a k:r !date<CR>$a - ++ANSWER: <ESC>^i// <ESC>$a
-    map ,q k:r !date<CR>$a - ++QUESTION: <ESC>^i// <ESC>$a
-    map ,t k:r !date<CR>$a - ++TODO: <ESC>^i// <ESC>$a
-    map ,f k:r !date<CR>$a - ++FINDING: <ESC>^i// <ESC>$a
-    map ,N k:r !date<CR>$a - ++NOTE: <ESC>^i// <ESC>$a
-    " assumes something is selected
-    map ,ss "my:!grep --color -R "<C-r>m" ..
-    map ,ssi "my:!grep --color -Ri "<C-r>m" .."
-"   }
