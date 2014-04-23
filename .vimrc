@@ -778,14 +778,6 @@
         let g:gitgutter_realtime = 0
     " }
 
-    " {
-        let g:slime_target = "tmux"
-    " }
-
-" }
-
-" GUI Settings {
-
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
         set guioptions-=T           " Remove the toolbar
@@ -797,9 +789,9 @@
         elseif has("gui_win32")
             set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
         endif
-        if has('gui_macvim')
-            set transparency=5      " Make the window slightly transparent
-        endif
+        " if has('gui_macvim')
+            " set transparency=5      " Make the window slightly transparent
+        " endif
     else
         if &term == 'xterm' || &term == 'screen'
             set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
