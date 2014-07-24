@@ -79,7 +79,7 @@ upgrade_repo() {
 
 clone_repo() {
     program_exists "git" "Sorry, we cannot continue without GIT, please install it first."
-    endpath="$HOME/.$app_name-3"
+    endpath="$HOME/.$app_name"
 
     if [ ! -e "$endpath/.git" ]; then
         git clone --recursive -b "$git_branch" "$git_uri" "$endpath"
