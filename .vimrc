@@ -1,6 +1,15 @@
 " Modeline and Notes {
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
+"                    __ _ _____              _
+"         ___ _ __  / _/ |___ /      __   __(_)_ __ ___
+"        / __| '_ \| |_| | |_ \ _____\ \ / /| | '_ ` _ \
+"        \__ \ |_) |  _| |___) |_____|\ V / | | | | | | |
+"        |___/ .__/|_| |_|____/        \_/  |_|_| |_| |_|
+"            |_|
+"
+"   This is the personal .vimrc file of Peter Morgan (@rockdon)
+"
 " }
 
 " Before {
@@ -99,7 +108,7 @@
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore             " Allow for cursor beyond last character
     set history=1000                    " Store a ton of history (default is 20)
-    set nospell                           " Spell checking on
+    "set spell                           " Spell checking on
     set hidden                          " Allow buffer switching without saving
 
     " Instead of reverting the cursor to the last position in the buffer, we
@@ -310,11 +319,11 @@
     " search results. To clear search highlighting rather than toggle it on
     " and off, add the following to your .vimrc.before.local file:
     "   let g:spf13_clear_search_highlight = 1
-    if exists('g:spf13_clear_search_highlight')
-        nmap <silent> <leader>/ :nohlsearch<CR>
-    else
-        nmap <silent> <leader>/ :set invhlsearch<CR>
-    endif
+    "if exists('g:spf13_clear_search_highlight')
+        "nmap <silent> <leader>/ :nohlsearch<CR>
+    "else
+        "nmap <silent> <leader>/ :set invhlsearch<CR>
+    "endif
 
 
     " Find merge conflict markers
@@ -351,6 +360,8 @@
     map <leader>ev :vsp %%
     map <leader>et :tabe %%
 
+    
+
     " Adjust viewports to the same size
     map <Leader>= <C-w>=
 
@@ -366,10 +377,10 @@
 
 " Plugins {
 
-    " PIV {
-        let g:DisableAutoPHPFolding = 0
-        let g:PIVAutoClose = 0
-    " }
+    "" PIV {
+    "    let g:DisableAutoPHPFolding = 0
+    "    let g:PIVAutoClose = 0
+    "" }
 
     " Misc {
         let g:NERDShutUp=1
@@ -471,7 +482,7 @@
 
     " ctrlp {
         let g:ctrlp_working_path_mode = 'ra'
-        nnoremap <silent> <D-e> :CtrlP<CR>
+        nnoremap <silent> <D-t> :CtrlP<CR>
         nnoremap <silent> <D-r> :CtrlPMRU<CR>
         let g:ctrlp_custom_ignore = {
             \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -604,9 +615,9 @@
             " Haskell post write lint and check with ghcmod
             " $ `cabal install ghcmod` if missing and ensure
             " ~/.cabal/bin is in your $PATH.
-            if !executable("ghcmod")
-                autocmd BufWritePost *.hs GhcModCheckAndLintAsync
-            endif
+            "if !executable("ghcmod")
+            "    autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+            "endif
 
             " Enable heavy omni completion.
             if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -778,6 +789,10 @@
         let g:gitgutter_realtime = 0
     " }
 
+" }
+
+" GUI Settings {
+
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
         set guioptions-=T           " Remove the toolbar
@@ -789,9 +804,9 @@
         elseif has("gui_win32")
             set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
         endif
-        " if has('gui_macvim')
-            " set transparency=5      " Make the window slightly transparent
-        " endif
+        if has('gui_macvim')
+            set transparency=5      " Make the window slightly transparent
+        endif
     else
         if &term == 'xterm' || &term == 'screen'
             set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine

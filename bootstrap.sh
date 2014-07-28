@@ -63,7 +63,7 @@ upgrade_repo() {
       msg "trying to update $1"
 
       if [ "$1" = "$app_name" ]; then
-          cd "$HOME/.$app_name-3" &&
+          cd "$HOME/.$app_name" &&
           git pull origin "$git_branch"
       fi
 
@@ -103,7 +103,7 @@ clone_vundle() {
 }
 
 create_symlinks() {
-    endpath="$HOME/.$app_name-3"
+    endpath="$HOME/.$app_name"
 
     lnif "$endpath/.vimrc"              "$HOME/.vimrc"
     lnif "$endpath/.vimrc.bundles"      "$HOME/.vimrc.bundles"
