@@ -102,7 +102,7 @@
             elseif exists('g:spf13_use_powerline') && exists('g:spf13_use_old_powerline')
                 Bundle 'Lokaltog/vim-powerline'
             else
-                Bundle 'bling/vim-airline'
+                Bundle 'vim-airline/vim-airline-themes'
             endif
 
             Bundle 'Lokaltog/vim-easymotion'
@@ -184,8 +184,9 @@
 
     " Go Lang
         if count(g:spf13_bundle_groups, 'go')
-            Bundle 'jnwhiteh/vim-golang'
-            Bundle 'spf13/vim-gocode'
+            "Bundle 'jnwhiteh/vim-golang'
+            "Bundle 'spf13/vim-gocode'
+            Bundle 'fatih/vim-go'
         endif
 
     " Misc
